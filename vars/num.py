@@ -308,3 +308,4 @@ def factorial(n: int) -> int:
         result *= i
 
     return result
+
