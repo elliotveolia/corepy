@@ -1,6 +1,5 @@
 import validators
 
-
 def valid_string(string: str) -> str:
     """
     Validate that input is a string.
