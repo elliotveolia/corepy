@@ -1,4 +1,3 @@
-
 def valid_bool(value: bool) -> bool:
     """
     Validate that input is a boolean.

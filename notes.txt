@@ -1,0 +1,62 @@
+High Priority (Very Common)
+
+    List/Array Functions
+        flatten() - flatten nested lists
+        unique() - get unique elements
+        find_index() - find element index
+        reverse() - reverse list
+        sort_custom() - custom sorting
+
+
+    File I/O
+        read_file() - read text file
+        write_file() - write to file
+        read_json() - read JSON
+        write_json() - write JSON
+        file_exists() - check if file exists
+
+    Type Checking
+        is_list() - check if list
+        is_dict() - check if dictionary
+        is_numeric() - check if numeric
+        is_iterable() - check if iterable
+
+🎯 Medium Priority (Often Needed)
+
+    String Advanced
+        reverse_string() - reverse a string
+        is_palindrome() - check if palindrome
+        count_occurrences() - count substring occurrences
+        truncate_string() - truncate with ellipsis
+        pad_string() - pad string to length
+
+    Date/Time
+        get_current_date() - current date
+        format_date() - format date string
+        days_between() - days between dates
+        is_leap_year() - check leap year
+
+    Random Utilities
+        random_int() - random integer in range
+        random_choice() - random element from list
+        shuffle_list() - shuffle list
+        random_string() - generate random string
+
+    Conversion Functions
+        binary_to_decimal() - binary to decimal
+        decimal_to_binary() - decimal to binary
+        hex_to_decimal() - hex to decimal
+        celsius_to_fahrenheit() - temperature conversion
+
+🎯 Lower Priority (Nice to Have)
+
+    Formatting
+        format_currency() - format as currency
+        format_percentage() - format as percentage
+        format_bytes() - format file size
+
+    Validation Advanced
+        is_email() - validate email
+        is_url() - validate URL
+        is_phone() - validate phone number
+        is_credit_card() - validate credit card
