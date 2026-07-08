@@ -86,9 +86,9 @@ def slash_check(string: str) -> str:
 
     # Find which slash type is in the string
     if '/' in string:
-        return jws(string, '/')
+        return jwos(string, '/')
     elif '\\' in string:
-        return jws(string, '\\')
+        return jwos(string, '\\')
     else:
         raise ValueError(
             "Error: No slash was found in this string: "
