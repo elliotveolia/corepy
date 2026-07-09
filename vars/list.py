@@ -173,3 +173,109 @@ def equal_length(lst_a: list, lst_b: list) -> bool:
     lst_b = valid_list(lst_b)
 
     return len(lst_a) == len(lst_b)
+
+def flatten(lst: list) -> list:
+    """
+    Flatten a nested list into a single level.
+
+    Recursively flattens all nested lists into a single flat list.
+
+    Args:
+        lst: Nested list to flatten
+
+    Returns:
+        list: Flattened list with all elements at single level
+
+    Raises:
+        TypeError: If input is not a list
+    """
+    lst = valid_list(lst)
+
+    flattened = []
+
+    def _flatten_recursive(items):
+        """Recursively flatten nested lists."""
+        for item in items:
+            if isinstance(item, list):
+                _flatten_recursive(item)
+            else:
+                flattened.append(item)
+
+    _flatten_recursive(lst)
+    return flattened
+
+def unique(lst: list) -> list:
+    """
+    Get unique elements from a list.
+
+    Returns a new list containing only unique elements from the input list.
+    Preserves the order of first occurrence.
+
+    Args:
+        lst: List to get unique elements from
+
+    Returns:
+        list: List containing only unique elements
+
+    Raises:
+        TypeError: If input is not a list
+    """
+    lst = valid_list(lst)
+
+    seen = set()
+    unique_list = []
+
+    for item in lst:
+        if item not in seen:
+            try:
+                seen.add(item)
+                unique_list.append(item)
+            except TypeError:
+                # Item is unhashable, add it anyway
+                if item not in unique_list:
+                    unique_list.append(item)
+
+    return unique_list
+
+def find_index(lst: list, item: any) -> int:
+    """
+    Find the index of an element in a list.
+
+    Returns the index of the first occurrence of the specified item.
+    Returns -1 if the item is not found.
+
+    Args:
+        lst: List to search
+        item: Item to find
+
+    Returns:
+        int: Index of the item, or -1 if not found
+
+    Raises:
+        TypeError: If lst is not a list
+    """
+    lst = valid_list(lst)
+
+    try:
+        return lst.index(item)
+    except ValueError:
+        return -1
+
+def reverse(lst: list) -> list:
+    """
+    Reverse a list.
+
+    Returns a new list with elements in reverse order.
+
+    Args:
+        lst: List to reverse
+
+    Returns:
+        list: Reversed list
+
+    Raises:
+        TypeError: If input is not a list
+    """
+    lst = valid_list(lst)
+    return lst[::-1]
+
