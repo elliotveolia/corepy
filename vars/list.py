@@ -1,3 +1,4 @@
+import numpy as np
 
 def valid_list(value: list) -> list:
     """
@@ -72,9 +73,103 @@ def validate_string_list(value: list) -> list:
     for item in value:
         if not isinstance(item, str):
             raise TypeError(
-                f"Error: Argument {inpt[i]}, is not a str type, "
-                f"instead got type of {type(inpt[i])}."
+                f"Error: Argument {item}, is not a str type, "
+                f"instead got type of {type(item)}."
             )
 
     return value
 
+def remove_all_occurrences(lst: list, item: any) -> list:
+    """
+    Remove all occurrences of an item from a list.
+
+    Creates a new list with all instances of the specified item removed.
+
+    Args:
+        lst: List to remove from
+        item: Item to remove
+
+    Returns:
+        list: New list with all occurrences removed
+
+    Raises:
+        TypeError: If lst is not a list
+    """
+    lst = valid_list(lst)
+    return [element for element in lst if element != item]
+
+def list_to_array(lst: list) -> any:
+    """
+    Convert a list to a NumPy array.
+
+    Converts a Python list into a NumPy array for numerical operations.
+
+    Args:
+        lst: List to convert
+
+    Returns:
+        numpy.ndarray: NumPy array created from the list
+
+    Raises:
+        TypeError: If input is not a list
+    """
+
+    lst = valid_list(lst)
+    return np.array(lst)
+
+def sort_ascending(lst: list) -> list:
+    """
+    Sort a list in ascending order.
+
+    Returns a new sorted list in ascending order (smallest to largest).
+
+    Args:
+        lst: List to sort
+
+    Returns:
+        list: Sorted list in ascending order
+
+    Raises:
+        TypeError: If input is not a list
+    """
+    lst = valid_list(lst)
+    return sorted(lst)
+
+def sort_descending(lst: list) -> list:
+    """
+    Sort a list in descending order.
+
+    Returns a new sorted list in descending order (largest to smallest).
+
+    Args:
+        lst: List to sort
+
+    Returns:
+        list: Sorted list in descending order
+
+    Raises:
+        TypeError: If input is not a list
+    """
+    lst = valid_list(lst)
+    return sorted(lst, reverse=True)
+
+def equal_length(lst_a: list, lst_b: list) -> bool:
+    """
+    Check if two lists have equal length.
+
+    Compares the lengths of two lists and returns True if they are equal.
+
+    Args:
+        lst_a: First list to compare
+        lst_b: Second list to compare
+
+    Returns:
+        bool: True if lists have equal length, False otherwise
+
+    Raises:
+        TypeError: If either argument is not a list
+    """
+    lst_a = valid_list(lst_a)
+    lst_b = valid_list(lst_b)
+
+    return len(lst_a) == len(lst_b)
